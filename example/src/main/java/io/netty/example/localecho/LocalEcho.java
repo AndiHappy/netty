@@ -39,7 +39,6 @@ public final class LocalEcho {
     public static void main(String[] args) throws Exception {
         // Address to bind on / connect to.
         final LocalAddress addr = new LocalAddress(PORT);
-
         EventLoopGroup serverGroup = new LocalEventLoopGroup();
         EventLoopGroup clientGroup = new NioEventLoopGroup(); // NIO event loops are also OK
         try {

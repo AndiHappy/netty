@@ -43,13 +43,17 @@ public class ObjectEchoClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         // Send the first message if this handler is a client-side handler.
-        ctx.writeAndFlush(firstMessage);
+        System.out.println("client channel active begine !");
+        ctx.writeAndFlush("1");
+        System.out.println("client channel write 1!");
     }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         // Echo back the received object to the server.
+        System.out.println("client read: " + msg);
         ctx.write(msg);
+        System.out.println("client ctx write: " + msg);
     }
 
     @Override

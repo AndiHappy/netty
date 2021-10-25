@@ -27,7 +27,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
-        System.out.println(msg);
+        // 无法区分 msg 的类型，需要 添加解析器
         ctx.write(msg);
     }
 
